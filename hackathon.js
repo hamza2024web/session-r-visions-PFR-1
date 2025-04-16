@@ -73,3 +73,37 @@ console.log(rechercherCandidat("mouad"));
 }
 
 // Fonctions de base has finished
+
+
+function filtrerParStatut(statut){
+    for ( let i=0; i<candidatures.length; i++){
+      if (candidatures[i].statut == statut){
+        return candidatures[i];
+      } else {
+        console.log("dosn't exist");
+        return candidatures;
+      }
+    }
+}
+console.log(filtrerParStatut("rejetée"));
+
+function statistiques(){
+    let total = candidatures.length ;
+    let Validées ;
+    for (let i = 0;i<candidatures.length;i++){
+      if (candidatures[i].statut == "validée"){
+        Validées = candidatures.length;
+      }
+    }
+    for (let i = 0;i<candidatures.length;i++){
+      if (candidatures[i].statut == "rejetée"){
+        Rejetées  = candidatures.length;
+      }
+    }
+    for (let i = 0;i<candidatures.length;i++){
+      if (candidatures[i].statut == "En attente"){
+        En_attente = candidatures.length;
+      }
+    }
+  }
+
