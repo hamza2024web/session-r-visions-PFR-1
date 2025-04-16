@@ -78,6 +78,7 @@ class Camion extends Vehicule implements ReservableInterface {
     
     public function reserver(Client $client, DateTime $dateDebut, $nbJours): Reservation
     {
+        
     }
 
     public function getType()
