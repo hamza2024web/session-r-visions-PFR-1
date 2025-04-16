@@ -78,9 +78,6 @@ class Camion extends Vehicule implements ReservableInterface {
     
     public function reserver(Client $client, DateTime $dateDebut, $nbJours): Reservation
     {
-        $agence = new Agence();
-        $agence->faireReservation($client,$this->marque,$dateDebut,$nbJours);
-        return $agence;
     }
 
     public function getType()
@@ -185,7 +182,7 @@ class Reservation {
         $this->client = $client;
         $this->dateDebut = $dateDebut;
         $this->nbJours = $nbJours;
-        $this->statut = $statut;
+        $this->statut = "pending";
     }
 
     public function calculerMontant($nbJours){
@@ -193,11 +190,12 @@ class Reservation {
     }
 
     public function confirmer(){
-        return $this->statut;
+        return $this->statut = "accept";
     }
 
     public function annuler(){
-        return $this->statut;
+        // delete in the array
+        return $this->statut = "annuler";
     }
 }
 ?>
